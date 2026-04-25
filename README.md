@@ -1,17 +1,27 @@
-# 💊 Supplement Sales EDA (2020–2025)
+# 💊 Supplement Sales — EDA & Data Visualisation (2020–2025)
 
-An exploratory data analysis project on weekly supplement sales data
-across multiple platforms and locations. Built as part of my Data Science
-learning journey.
+An end-to-end data analysis and visualisation project on weekly supplement
+sales data across multiple platforms and locations.
+Built as part of my Data Science learning journey.
 
 ---
 
 ## 📌 Project Overview
 
 This project analyses 4,384 rows of weekly supplement sales data spanning
-January 2020 to April 2025. The analysis covers sales trends, platform
-performance, category revenue, discount impact, and return rates across
-the USA, UK, and Canada.
+January 2020 to April 2025. It covers two phases — exploratory data
+analysis to understand the data, and a dedicated visualisation notebook
+that answers specific business questions through storytelling with charts.
+
+**Business Goal:** Understand what drives revenue in supplement sales
+and identify opportunities to increase profit.
+
+**Key Questions Answered:**
+1. Which categories and products generate the most revenue?
+2. How do discounts affect sales and profit?
+3. Which platform performs best?
+4. Are returns affecting profits?
+5. How does revenue change over time?
 
 ---
 
@@ -24,6 +34,7 @@ the USA, UK, and Canada.
 
 ## 🛠️ What Was Done
 
+**EDA**
 - Loaded and inspected the dataset using `.info()`, `.head()`, `.describe()`
 - Converted DATE column to datetime and extracted Month and Year
 - Analysed distributions of Units Sold, Revenue, and Discount
@@ -34,6 +45,24 @@ the USA, UK, and Canada.
 - Compared Net Revenue across platforms — Amazon, Walmart, iHerb
 - Compared Net Revenue across locations — USA, UK, Canada
 - Calculated correlation heatmap across numeric variables
+
+**Visualisation**
+- Built a dedicated storytelling notebook answering 5 business questions
+- Each chart paired with a business insight and recommended decision
+- Identified top performing products — Biotin and Zinc in Vitamins and Minerals
+- Found iHerb as the strongest performing platform
+- Discovered limited benefit from discounting on revenue
+- Identified seasonal revenue spikes for promotion planning
+
+---
+
+## 📊 Key Business Insights
+
+- Biotin and Zinc from Vitamins and Minerals are the highest revenue drivers
+- iHerb outperforms Amazon and Walmart on Net Revenue
+- Discounts show limited impact on overall revenue
+- Revenue shows consistent growth with seasonal spikes — promotions should align with peak months
+- Returns have a measurable impact on net profitability
 
 ---
 
@@ -51,7 +80,8 @@ the USA, UK, and Canada.
 ## 📁 File Structure
 supplement-sales-eda/
 │
-├── Notebook.ipynb              # Main EDA notebook
+├── Notebook.ipynb              # EDA notebook
+├── visualisation.ipynb         # Storytelling visualisation notebook
 ├── data/
 │   └── supplement_sales.csv    # Raw dataset
 └── README.md                   # Project documentation
@@ -60,7 +90,8 @@ supplement-sales-eda/
 
 ## 💡 Key Learnings
 
-- Plotly produces interactive charts that communicate trends better than static plots
+- Starting with a business goal transforms analysis from exploration to decision making
+- Each chart should answer a specific question — not just display data
 - Net Revenue must account for discounts on returned items — not just full price
 - Time series grouping with `.dt.to_period("M")` simplifies monthly aggregations
 - Subplots with `sharex=True` make multi-metric trend comparisons cleaner
